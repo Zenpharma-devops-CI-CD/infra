@@ -30,8 +30,8 @@ module "eks" {
   kubernetes_version = "1.33"
   instance_types     = ["m7i-flex.large"]
   min_size           = 1
-  max_size           = 2
-  desired_size       = 1
+  max_size           = 3
+  desired_size       = 2
 }
 
 module "rds" {
