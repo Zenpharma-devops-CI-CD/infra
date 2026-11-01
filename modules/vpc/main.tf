@@ -15,7 +15,8 @@ module "vpc" {
   enable_dns_hostnames         = true
   enable_dns_support           = true
   create_database_subnet_group = true
-
+  
+  # Those two tags are what Kubernetes (EKS) needs to discover which subnets to place load balancers in. That kind of info comes from the EKS/AWS docs, not the VPC module docs.
   public_subnet_tags = {
     "kubernetes.io/role/elb" = "1"
   }
